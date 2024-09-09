@@ -6,11 +6,11 @@
 
 bv TRICENTRIC_TRIAD[] = { XY, ZY, YI };
 
-int results[DOILY_SIZE][DOILY_SIZE][DOILY_SIZE][DOILY_SIZE][DOILY_SIZE][DOILY_SIZE][2][13] = { 0 };
-//                         ^          ^           ^           ^            ^           ^     ^   ^
-// type of Observable:     A          B           C           D            E           F     |   |
-//                                                            Linear (0), or quadratic (1)-\_|   |
-//              Configuration of negative lines + 1 so that indexing coincides with cathegory -\_|
+        int results[DOILY_SIZE][DOILY_SIZE][DOILY_SIZE][DOILY_SIZE][DOILY_SIZE][DOILY_SIZE][2][13] = { 0 };
+//                         ^          ^           ^           ^            ^          ^     ^   ^
+// type of Observable:     A          B           C           D            E          F     |   |
+//                                                           Linear (0), or quadratic (1)-\_|   |
+//             Configuration of negative lines + 1 so that indexing coincides with cathegory -\_|
 //  ***********
 // NOTE:
 //Negative line configurations corresponding to 7B and 8B are stored at indices 1, and 2 respectively
