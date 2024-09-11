@@ -156,13 +156,34 @@ bool categorize_doily(bv doily[])
     return true;
 }
 
+/**
+ * @brief Custom function for formating output of print_results
+ * 
+ * @param number to print
+ */
+void my_print(size_t number)
+{
+    if(number == 0)
+        print("     ");
+    else if(number < 10)
+        print("  %zu  ", number);
+    else if(number < 100)
+        print(" %zu  ", number);
+    else if(number < 1000)
+        print(" %zu ", number);
+    print("|");
+}
+
+/**
+ * @brief Prints result to the screen
+ */
 void print_results()
 {
     // **** BLOC 1 ****
     // **** Specifying row ****
     //First 6 loops go through types A, B, C etc. of observables
-    print("| A | B | C | D | E | F | v | 3 | 4 | 5 | 6 | 7A | 7B| 8A | 8B | 9 | 10 | 11 | 12 |\n");
-    print("-----------------------------------------------------------------------------------\n");
+    print("| A | B | C | D | E | F | v |  3  |  4  |  5  |  6  | 7A  | 7B  | 8A  | 8B  |  9  | 10  | 11  | 12  |\n");
+    print("------------------------------------------------------------------------------------------------------\n");
     for(size_t a = 0; a < DOILY_SIZE; a++)
     {
         for(size_t b = 0; b < DOILY_SIZE; b++)
@@ -175,18 +196,16 @@ void print_results()
                     {
                         for(size_t f = 0; f < DOILY_SIZE; f++)
                         {
-                            //Quadratic, or Linear?
+                            //Quadratic, or Linear doily?
                             for(size_t q = 0; q < 2; q++)
                             {
                                 // **** BLOC 2 ****
                                 // **** Specifying column ****
-                                /*if((a+b+c+d+e+f) != 15)
-                                    continue;*/
+                                // Printing only non-empty rows
                                 bool empty_row = true;
                                 for(size_t negative_line = 3; negative_line < 13; negative_line++)
                                 {
                                     int result = results[a][b][c][d][e][f][q][negative_line];
-                                    //print("%zu, %zu, %zu, %zu, %zu, %zu, %zu| %zu ---- %d \n", a, b, c, d, e, f, q, negative_line, result);
                                     if (result != 0)
                                     {
                                         empty_row = false;
@@ -211,6 +230,7 @@ void print_results()
 
                                 if(!empty_row)
                                 {
+                                    // Types of observables in doily
                                     print("| %zu |", a);
                                     print(" %zu |", b);
                                     print(" %zu |", c);
@@ -218,39 +238,26 @@ void print_results()
                                     print(" %zu |", e);
                                     print(" %zu |", f);
                                     print(" %zu |", q);
+                                    // Number of doilies with given configuration of negative lines
                                     for(size_t negative_line = 3; negative_line < 13; negative_line++)
                                     {
                                         int result = results[a][b][c][d][e][f][q][negative_line];
-                                        if(result == 0)
-                                        {
-                                            print("   |");
-                                        }
-                                        if(result != 0)
-                                            print(" %d |", result);
-
+                                        my_print(result);
+                                        //7B
                                         if(negative_line == 7)
                                         {
                                             result = results[a][b][c][d][e][f][q][1];
-                                            if(result == 0)
-                                            {
-                                                print("   |");
-                                            }
-                                            if(result != 0)
-                                                print(" %d |", result);
+                                            my_print(result);
                                         }
                                         // 8B
                                         if (negative_line == 8)
                                         {
                                             result = results[a][b][c][d][e][f][q][2];
-                                            if(result == 0)
-                                            {
-                                                print("   |");
-                                            }
-                                            if(result != 0)
-                                                print(" %d |", result);
+                                            my_print(result);
                                         }
+                                        //print next line
                                         if(negative_line == 12)
-                                        print("\n");
+                                            print("\n");
                                     }
                                 }
                             }
@@ -260,7 +267,6 @@ void print_results()
             }
         }
     }
-    //print("\n %d \n", results[0][0][2][4][4][5][0][3]);
 }
 
 /**
