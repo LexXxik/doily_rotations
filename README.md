@@ -49,4 +49,4 @@ The project starts with 4 unique 2-qubit doilies with different types of 2-qubit
 Once such a 6-qubit waffle is created, it remains to rotate each of the constituent 2-qubit subdoilies. It is like a combination lock!! After each rotation, we check whether the doily is contextual. If it is, the doily is categorized based on types of observables and configuration of negative lines. 
 
 ## Results
-![This is categorization of all 6-qubit doilies create by rotation of it 2-qubit subdoilies](https://media.licdn.com/dms/image/v2/D4E2DAQFYzFIHRRRfHg/profile-treasury-image-shrink_1920_1920/profile-treasury-image-shrink_1920_1920/0/1715527517727?e=1726761600&v=beta&t=j1Bye2XlfVDPF1IX06xGpjuY8P0yh0E9YTA0pWmBR68)
+![This is categorization of all 6-qubit doilies create by rotation of it 2-qubit subdoilies](https://media.licdn.com/dms/image/v2/C4E22AQHVMPBCVl010g/feedshare-shrink_800/feedshare-shrink_800/0/1663784566926?e=1734566400&v=beta&t=FaM8JfRvTA5GLM5J1g7vgds6joq8f4KJtMtnX8XPdJI)
